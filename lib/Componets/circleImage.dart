@@ -8,7 +8,7 @@ class CircleImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: CircleAvatar(
-        radius: 40,
+        radius: 35,
         backgroundImage: AssetImage(image),
       ),
     );
