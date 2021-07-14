@@ -7,14 +7,19 @@ class ProductTile extends StatelessWidget {
   final String title2;
   final String price1;
   final String price2;
+  final String oldprice1;
+  final String oldprice2;
 
-  ProductTile(
-      {required this.image1,
-      required this.image2,
-      required this.price1,
-      required this.price2,
-      required this.title1,
-      required this.title2});
+  ProductTile({
+    required this.image1,
+    required this.image2,
+    required this.price1,
+    required this.price2,
+    required this.title1,
+    required this.title2,
+    required this.oldprice1,
+    required this.oldprice2,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +66,14 @@ class ProductTile extends StatelessWidget {
             Row(
               children: [
                 Text(price1, style: TextStyle(fontSize: 20)),
-                Text('ass')
+                SizedBox(width: 10),
+                Text(
+                  oldprice1,
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300,
+                      decoration: TextDecoration.lineThrough),
+                )
               ],
             )
           ],
@@ -113,8 +125,19 @@ class ProductTile extends StatelessWidget {
               padding: EdgeInsets.only(left: 15),
               child: Row(
                 children: [
-                  Text(price2, style: TextStyle(fontSize: 20)),
-                  Text('ass')
+                  Text(price2,
+                      style:
+                          TextStyle(fontSize: 20, )),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    oldprice2,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300,
+                        decoration: TextDecoration.lineThrough),
+                  )
                 ],
               ),
             )

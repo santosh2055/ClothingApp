@@ -10,7 +10,7 @@ class ProductsmallContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.black, width: 2),
       ),
-      height: 100,
+      height: 70,
       width: 75,
       child: Padding(
         padding: const EdgeInsets.all(3.0),
