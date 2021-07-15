@@ -18,7 +18,7 @@ class Categories extends StatelessWidget {
             title: 'T-shirt',
           ),
           CircleImage(
-            image: 'Images/hat.jpg',
+            image: 'Images/lbag.jpg',
             title: 'Hat',
           ),
           CircleImage(

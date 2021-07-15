@@ -1,4 +1,4 @@
-import 'package:clothing_store/Componets/OderContainer.dart';
+import 'package:clothing_store/Componets/oderContainer.dart';
 import 'package:clothing_store/Componets/smallproductContainer.dart';
 import 'package:flutter/material.dart';
 
@@ -65,14 +65,14 @@ class ProductDetail extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 250,
-                  left: 50,
+                  top: MediaQuery.of(context).size.height*0.4,
+                  left: MediaQuery.of(context).size.height*0.1,
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0XffC2D3E0)),
-                      height: 84,
-                      width: 240,
+                      height: 65,
+                      width: 235,
                       alignment: Alignment.bottomCenter,
                       child: Row(
                         children: [

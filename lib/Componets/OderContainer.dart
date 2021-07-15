@@ -1,4 +1,4 @@
-import 'package:clothing_store/Screen/oderDetail.dart';
+import 'package:clothing_store/Screen/oder_screen.dart';
 import 'package:flutter/material.dart';
 
 Container OderContainer(BuildContext context, Size size) {
@@ -62,11 +62,11 @@ Container OderContainer(BuildContext context, Size size) {
                       child: Row(children: [
                         IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.exposure_minus_1_outlined)),
+                            icon: Icon(Icons.remove)),
                         Text('01'),
                         IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.exposure_plus_1_outlined))
+                            icon: Icon(Icons.add))
                       ]),
                       height: 60,
                       width: 140,
@@ -79,7 +79,9 @@ Container OderContainer(BuildContext context, Size size) {
                     Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('Composition'), Text('Slik Bambo')],
+                        children: [
+                          Text('Composition'), 
+                          Text('Slik Bambo')],
                       ),
                       height: 60,
                       width: 140,

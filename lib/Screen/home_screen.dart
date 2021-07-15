@@ -1,7 +1,7 @@
-import 'package:clothing_store/Componets/Categores.dart';
+import 'package:clothing_store/Componets/categores.dart';
 import 'package:clothing_store/Componets/buildAppbar_home.dart';
 import 'package:clothing_store/Componets/producttile.dart';
-import 'package:clothing_store/Screen/poroductDetail_screen.dart';
+import 'package:clothing_store/Screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomepageScreen extends StatefulWidget {

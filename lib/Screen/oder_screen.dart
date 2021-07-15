@@ -18,20 +18,24 @@ class _OderDetailsState extends State<OderDetails> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 20),
-                child: Row(children: [
-                  IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: Icon(Icons.arrow_back_sharp)),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Text('My Cart (3)',
+                child: Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: Icon(Icons.arrow_back_sharp)),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Text(
+                      'My Cart (3)',
                       style: TextStyle(
                         fontSize: 24,
-                      )),
-                ]),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 10),
               OderCard(
@@ -51,7 +55,6 @@ class _OderDetailsState extends State<OderDetails> {
                 newprice: '\$200',
                 oldprice: '\$240',
               ),
-            
               SizedBox(
                 height: 20,
               ),
@@ -83,7 +86,6 @@ class _OderDetailsState extends State<OderDetails> {
                 ],
               ),
               SizedBox(height: 10),
-
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -103,27 +105,27 @@ class _OderDetailsState extends State<OderDetails> {
                       SizedBox(height: 10),
                       Divider(),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Shipping',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text('\$10 US')
-                          ],
-                        ),
-                        SizedBox(height: 10),
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Shipping',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text('\$10 US')
+                        ],
+                      ),
+                      SizedBox(height: 10),
                       Divider(),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Total',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text('\$310 US')
-                          ],
-                        ),
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text('\$310 US')
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -149,4 +151,3 @@ class _OderDetailsState extends State<OderDetails> {
     );
   }
 }
-
