@@ -1,19 +1,10 @@
 import 'package:clothing_store/Componets/smallproductContainer.dart';
+import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 
 class OderCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final String size;
-  final String newprice;
-  final String oldprice;
-
-  OderCard(
-      {required this.image,
-      required this.newprice,
-      required this.oldprice,
-      required this.size,
-      required this.title});
+  final Product product;
+  OderCard({required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +14,11 @@ class OderCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding:  EdgeInsets.only(top: 10,),
+            padding: EdgeInsets.only(
+              top: 10,
+            ),
             child: ProductsmallContainer(
-              image: image,
+              image: product.image,
             ),
           ),
           SizedBox(width: 30),
@@ -33,23 +26,23 @@ class OderCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                product.title,
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: 5),
-              Text(size),
+              Text(product.size),
               SizedBox(height: 5),
               Row(
                 children: [
                   Text(
-                    newprice,
+                    product.newprice.toString(),
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Text(
-                    oldprice,
+                    product.newprice.toString(),
                     style: TextStyle(
                         fontSize: 17, decoration: TextDecoration.lineThrough),
                   ),
@@ -57,7 +50,9 @@ class OderCard extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(width: 20,),
+          SizedBox(
+            width: 20,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [

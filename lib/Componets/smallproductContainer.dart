@@ -16,10 +16,7 @@ class ProductsmallContainer extends StatelessWidget {
         padding: const EdgeInsets.all(3.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Image(
-            image: AssetImage(image),
-            fit: BoxFit.cover,
-          ),
+          child: Image.asset(image)
         ),
       ),
     );

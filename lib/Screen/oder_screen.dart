@@ -1,7 +1,11 @@
 import 'package:clothing_store/Componets/oderCard.dart';
+import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 
 class OderDetails extends StatefulWidget {
+  final Product product;
+
+  OderDetails({required this.product});
   @override
   _OderDetailsState createState() => _OderDetailsState();
 }
@@ -18,45 +22,30 @@ class _OderDetailsState extends State<OderDetails> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 20),
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        icon: Icon(Icons.arrow_back_sharp)),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Text(
-                      'My Cart (3)',
+                child: Row(children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(Icons.arrow_back_sharp)),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Text('My Cart (3)',
                       style: TextStyle(
                         fontSize: 24,
-                      ),
-                    ),
-                  ],
-                ),
+                      )),
+                ]),
               ),
               SizedBox(height: 10),
               OderCard(
-                image: 'Images/1.jpg',
-                title: 'New Shirt',
-                size: 'Extra Large(XL)',
-                newprice: '\$100',
-                oldprice: '\$130',
-              ),
-              SizedBox(
-                height: 10,
+                product: products[0],
               ),
               OderCard(
-                image: 'Images/bag.jpg',
-                title: 'New Bag',
-                size: 'Extra Large(XL)',
-                newprice: '\$200',
-                oldprice: '\$240',
+                product: products[3],
               ),
-              SizedBox(
-                height: 20,
+              OderCard(
+                product: products[5],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +92,6 @@ class _OderDetailsState extends State<OderDetails> {
                         ],
                       ),
                       SizedBox(height: 10),
-                      Divider(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

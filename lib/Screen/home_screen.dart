@@ -1,6 +1,8 @@
+import 'package:clothing_store/Componets/bulidBottomAppbar.dart';
 import 'package:clothing_store/Componets/categores.dart';
 import 'package:clothing_store/Componets/buildAppbar_home.dart';
 import 'package:clothing_store/Componets/producttile.dart';
+import 'package:clothing_store/Model/product.dart';
 import 'package:clothing_store/Screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +20,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+        child: Padding(
+          padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -38,61 +40,42 @@ class _HomepageScreenState extends State<HomepageScreen> {
                         border: InputBorder.none),
                   ),
                 ),
-                SizedBox(height: 20),
-                Categories(),
                 SizedBox(height: 10),
+                Categories(),
+                SizedBox(height: 5),
                 Text(
                   'New Arrivals',
-                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+                  style:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 5),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ProductDetail()));
-                  },
-                  child: ProductTile(
-                    image1: 'Images/1.jpg',
-                    title1: 'New Tshirt',
-                    price1: '\$100',
-                    image2: 'Images/bag.jpg',
-                    title2: 'New Bag',
-                    price2: '\$200', 
-                    oldprice1: '\$130', 
-                    oldprice2: '\$240',
+                Container(
+                  height:MediaQuery.of(context).size.height*0.4,
+                  child: GridView.builder(
+                    itemCount: products.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 4,
+                        crossAxisSpacing: 4,
+                        childAspectRatio: 4 / 5),
+                    itemBuilder: (ctx, index) => Producttile(
+                      product: products[index],
+                      onpress: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ProductDetail(product: products[index],),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                ProductTile(
-                  image1: 'Images/lbag.jpg',
-                  title1: 'New Hat',
-                  price1: '\$50',
-                  image2: 'Images/shoe.webp',
-                  title2: 'New Shoe',
-                  price2: '\$30', 
-                  oldprice1: '\$60', 
-                  oldprice2: '\$40',
-                ),
+                )
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        child: Container(
-          height: 55,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.receipt_sharp)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.circle_rounded)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: buildbottomAppbar(),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(5.0),
         child: FloatingActionButton(

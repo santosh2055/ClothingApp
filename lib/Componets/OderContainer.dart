@@ -1,7 +1,20 @@
+import 'package:clothing_store/Model/product.dart';
 import 'package:clothing_store/Screen/oder_screen.dart';
 import 'package:flutter/material.dart';
 
-Container OderContainer(BuildContext context, Size size) {
+
+class BuildaddOder extends StatelessWidget {
+  const BuildaddOder({
+    Key? key,
+    required this.product,
+    required this.size,
+  }) : super(key: key);
+
+  final Product product;
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Padding(
         padding: EdgeInsets.only(top: 20, left: 4, right: 4),
@@ -11,11 +24,11 @@ Container OderContainer(BuildContext context, Size size) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'New Fashion Shirt',
-                  style: TextStyle(fontSize: 22),
+                  product.title,
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  '\$100',
+                  '\$${product.newprice}',
                   style: TextStyle(fontSize: 22),
                 ),
               ],
@@ -60,13 +73,9 @@ Container OderContainer(BuildContext context, Size size) {
                   children: [
                     Container(
                       child: Row(children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.remove)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.add)),
                         Text('01'),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.add))
+                        IconButton(onPressed: () {}, icon: Icon(Icons.remove))
                       ]),
                       height: 60,
                       width: 140,
@@ -79,9 +88,7 @@ Container OderContainer(BuildContext context, Size size) {
                     Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Composition'), 
-                          Text('Slik Bambo')],
+                        children: [Text('Composition'), Text('Slik Bambo')],
                       ),
                       height: 60,
                       width: 140,
@@ -94,13 +101,11 @@ Container OderContainer(BuildContext context, Size size) {
                 ),
                 SizedBox(width: 10),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => OderDetails(),
-                      ),
-                    );
-                  },
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => OderDetails(product: product),
+                    ),
+                  ),
                   child: Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -135,9 +140,12 @@ Container OderContainer(BuildContext context, Size size) {
       ),
       margin: EdgeInsets.only(top: size.height * 0.55),
       height: 300,
+      width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-          color: Colors.white),
+        color: Color(0XffC2D3E0),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+      ),
     );
   }
+}
