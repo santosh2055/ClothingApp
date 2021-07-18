@@ -1,3 +1,4 @@
+import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 
 class ProductsmallContainer extends StatelessWidget {
@@ -11,13 +12,11 @@ class ProductsmallContainer extends StatelessWidget {
         border: Border.all(color: Colors.black, width: 2),
       ),
       height: 70,
-      width: 75,
+      width: 70,
       child: Padding(
         padding: const EdgeInsets.all(3.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset(image)
-        ),
+            borderRadius: BorderRadius.circular(10), child: Image.asset(image)),
       ),
     );
   }

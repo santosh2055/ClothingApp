@@ -14,76 +14,95 @@ class HomepageScreen extends StatefulWidget {
 class _HomepageScreenState extends State<HomepageScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppbar(),
-      backgroundColor: Color(0XffC2D3E0),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.only(top: 5, left: 10, right: 10),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: TextFormField(
-                    textAlign: TextAlign.center,
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search),
-                        hintText: 'Search product',
-                        border: InputBorder.none),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Categories(),
-                SizedBox(height: 5),
-                Text(
-                  'New Arrivals',
-                  style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  height:MediaQuery.of(context).size.height*0.4,
-                  child: GridView.builder(
-                    itemCount: products.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 4,
-                        crossAxisSpacing: 4,
-                        childAspectRatio: 4 / 5),
-                    itemBuilder: (ctx, index) => Producttile(
-                      product: products[index],
-                      onpress: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                ProductDetail(product: products[index],),
-                          ),
-                        );
-                      },
+    return SafeArea(
+      child: Scaffold(
+        appBar: buildAppbar(),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.only(top: 5, left: 15, right: 15),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          hintText: 'Search product',
+                          border: InputBorder.none),
                     ),
                   ),
-                )
-              ],
+                  SizedBox(height: 10),
+                  Categories(),
+                  SizedBox(height: 5),
+                  Text(
+                    'New Arrivals',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Producttile(
+                        product: products[0],
+                        onpress: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ProductDetail(
+                                product: products[0],
+                              ),
+                            ),
+                          );
+                        },
+                        isliked: true,
+                      ),
+
+                      Producttile(
+                        product: products[2],
+                        onpress: () {},
+                        isliked: false,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Producttile(
+                        product: products[3],
+                        onpress: () {},
+                        isliked: false,
+                      ),
+                      Producttile(
+                        product: products[4],
+                        onpress: () {},
+                        isliked: false,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: buildbottomAppbar(),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
+        bottomNavigationBar: buildbottomAppbar(),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.add),
+          ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -8,10 +8,10 @@ BottomAppBar buildbottomAppbar() {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.receipt_sharp)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.circle_rounded)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.home,color: Colors.blue,)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.receipt_sharp,color: Colors.black45,)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.circle_rounded,color: Colors.black45)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.person,color: Colors.black45)),
           ],
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:clothing_store/Model/product.dart';
 import 'package:clothing_store/Screen/oder_screen.dart';
 import 'package:flutter/material.dart';
 
-
 class BuildaddOder extends StatelessWidget {
   const BuildaddOder({
     Key? key,
@@ -17,19 +16,24 @@ class BuildaddOder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: EdgeInsets.only(top: 20, left: 4, right: 4),
+        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   product.title,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black),
                 ),
                 Text(
                   '\$${product.newprice}',
-                  style: TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: 22, color:Colors.black),
                 ),
               ],
             ),
@@ -37,6 +41,7 @@ class BuildaddOder extends StatelessWidget {
               height: 10,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
@@ -44,9 +49,23 @@ class BuildaddOder extends StatelessWidget {
                     Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('Size'), Text('Large')],
+                        children: [
+                          Text(
+                            'Size',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                          Text(
+                            'Large',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black),
+                          )
+                        ],
                       ),
-                      height: 60,
+                      height: 65,
                       width: 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -57,9 +76,18 @@ class BuildaddOder extends StatelessWidget {
                     Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('Color'), Text('White')],
+                        children: [
+                          Text('Color'),
+                          Container(
+                            height: 20,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.blueGrey,
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                        ],
                       ),
-                      height: 60,
+                      height: 65,
                       width: 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -73,11 +101,27 @@ class BuildaddOder extends StatelessWidget {
                   children: [
                     Container(
                       child: Row(children: [
-                        IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-                        Text('01'),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.remove))
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add,
+                              color: Colors.black,
+                            )),
+                        Text(
+                          '01',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove,
+                              color: Colors.black,
+                            ))
                       ]),
-                      height: 60,
+                      height: 65,
                       width: 140,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -88,9 +132,15 @@ class BuildaddOder extends StatelessWidget {
                     Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('Composition'), Text('Slik Bambo')],
+                        children: [
+                          Text('Composition'),
+                          Text(
+                            'Slik Bambo',
+                            style: TextStyle(fontSize: 20, color: Colors.black),
+                          ),
+                        ],
                       ),
-                      height: 60,
+                      height: 65,
                       width: 140,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -139,12 +189,14 @@ class BuildaddOder extends StatelessWidget {
         ),
       ),
       margin: EdgeInsets.only(top: size.height * 0.55),
-      height: 300,
+      height: MediaQuery.of(context).size.height * .35,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0XffC2D3E0),
+        color: Colors.white,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
       ),
     );
   }
