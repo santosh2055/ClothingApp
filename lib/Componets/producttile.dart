@@ -1,17 +1,29 @@
 import 'package:clothing_store/Model/product.dart';
+import 'package:clothing_store/Screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
-class Producttile extends StatelessWidget {
+class Producttile extends StatefulWidget {
   final Product product;
-  final VoidCallback onpress;
-  bool isliked = false;
 
-  Producttile(
-      {required this.product, required this.onpress, required this.isliked});
+  Producttile({
+    required this.product,
+  });
+
+  @override
+  _ProducttileState createState() => _ProducttileState();
+}
+
+class _ProducttileState extends State<Producttile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onpress,
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => ProductDetail(
+            product: widget.product,
+          ),
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,7 +38,7 @@ class Producttile extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    product.image,
+                    widget.product.image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -36,13 +48,19 @@ class Producttile extends StatelessWidget {
                 right: 5,
                 child: CircleAvatar(
                   radius: 20,
-                  backgroundColor: Colors.white54,
+                  backgroundColor: Colors.white70,
                   child: IconButton(
                     onPressed: () {
+                      widget.product.isFavourate = !widget.product.isFavourate;
+                      setState(() {});
                     },
                     icon: Icon(
-                      isliked ? Icons.favorite : Icons.favorite_outline,
-                      color: isliked ? Colors.red : Colors.black,
+                      widget.product.isFavourate
+                          ? Icons.favorite
+                          : Icons.favorite_outline,
+                      color: widget.product.isFavourate
+                          ? Colors.red
+                          : Colors.black,
                       size: 25,
                     ),
                   ),
@@ -53,7 +71,7 @@ class Producttile extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 10),
             child: Text(
-              product.title,
+              widget.product.title,
               style: TextStyle(fontSize: 22),
             ),
           ),
@@ -63,12 +81,12 @@ class Producttile extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "\$${product.newprice.toString()}",
+                  "\$${widget.product.newprice.toString()}",
                   style: TextStyle(fontSize: 18),
                 ),
                 SizedBox(width: 10),
                 Text(
-                  "\$${product.oldprice.toString()}",
+                  "\$${widget.product.oldprice.toString()}",
                   style: TextStyle(
                       fontSize: 15, decoration: TextDecoration.lineThrough),
                 ),

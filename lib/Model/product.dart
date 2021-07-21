@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Product {
   final int id;
   final String title;
@@ -5,14 +7,17 @@ class Product {
   final double newprice;
   final double oldprice;
   final String size;
+  bool isFavourate;
 
-  Product(
-      {required this.id,
-      required this.title,
-      required this.image,
-      required this.newprice,
-      required this.oldprice,
-      required this.size});
+  Product({
+    required this.id,
+    required this.title,
+    required this.image,
+    required this.newprice,
+    required this.oldprice,
+    required this.size,
+    this.isFavourate = false,
+  });
 }
 
 List<Product> products = [
@@ -53,8 +58,22 @@ List<Product> products = [
       size: 'Extra large(XL)'),
   Product(
       id: 6,
-      title: 'Men_shirt',
+      title: ' New Bag',
       image: 'Images/bag.jpg',
+      newprice: 40,
+      oldprice: 65,
+      size: ' Large(L)'),
+  Product(
+      id: 7,
+      title: ' New Brand Tshirt',
+      image: 'Images/2.jpg',
+      newprice: 40,
+      oldprice: 65,
+      size: ' Large(L)'),
+      Product(
+      id: 8,
+      title: ' New Brand Tshirt',
+      image: 'Images/3.jpg',
       newprice: 40,
       oldprice: 65,
       size: ' Large(L)'),

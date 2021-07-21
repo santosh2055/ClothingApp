@@ -1,11 +1,17 @@
 import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 
-class OderCard extends StatelessWidget {
+class OderCard extends StatefulWidget {
   final Product product;
 
   OderCard({required this.product});
 
+  @override
+  _OderCardState createState() => _OderCardState();
+}
+
+class _OderCardState extends State<OderCard> {
+  int numofiitem = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,7 +21,6 @@ class OderCard extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.black, width: 1),
           ),
           height: 85,
           width: 85,
@@ -24,7 +29,7 @@ class OderCard extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                product.image,
+                widget.product.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,24 +39,24 @@ class OderCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              product.title,
+              widget.product.title,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
             ),
             SizedBox(height: 5),
             Text(
-              product.size,
+              widget.product.size,
               style: TextStyle(color: Colors.black26, fontSize: 15),
             ),
             SizedBox(height: 10),
             Row(
               children: [
                 Text(
-                  '\$${product.newprice}',
+                  '\$${widget.product.newprice}',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(width: 5),
                 Text(
-                  '\$${product.oldprice}',
+                  '\$${widget.product.oldprice}',
                   style: TextStyle(
                       fontSize: 15, decoration: TextDecoration.lineThrough),
                 ),
@@ -70,22 +75,33 @@ class OderCard extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        if (numofiitem > 0) {
+                          numofiitem--;
+                        }
+                      });
+                    },
                     icon: Icon(Icons.remove_circle_outline, size: 25)),
                 Text(
-                  '01',
+                  numofiitem.toString().padLeft(2, "0"),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        numofiitem++;
+                      });
+                    },
                     icon: Icon(
                       Icons.add_circle,
                       color: Colors.blue,
                       size: 25,
-                    )),
+                    ),
+                    ),
               ],
             )
           ],

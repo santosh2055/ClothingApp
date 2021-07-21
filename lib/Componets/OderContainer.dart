@@ -2,7 +2,7 @@ import 'package:clothing_store/Model/product.dart';
 import 'package:clothing_store/Screen/oder_screen.dart';
 import 'package:flutter/material.dart';
 
-class BuildaddOder extends StatelessWidget {
+class BuildaddOder extends StatefulWidget {
   const BuildaddOder({
     Key? key,
     required this.product,
@@ -11,6 +11,13 @@ class BuildaddOder extends StatelessWidget {
 
   final Product product;
   final Size size;
+
+  @override
+  _BuildaddOderState createState() => _BuildaddOderState();
+}
+
+class _BuildaddOderState extends State<BuildaddOder> {
+  int numofitem = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +32,15 @@ class BuildaddOder extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  product.title,
+                  widget.product.title,
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
                 Text(
-                  '\$${product.newprice}',
-                  style: TextStyle(fontSize: 22, color:Colors.black),
+                  '\$${widget.product.newprice}',
+                  style: TextStyle(fontSize: 22, color: Colors.black),
                 ),
               ],
             ),
@@ -68,7 +75,7 @@ class BuildaddOder extends StatelessWidget {
                       height: 65,
                       width: 100,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -90,7 +97,7 @@ class BuildaddOder extends StatelessWidget {
                       height: 65,
                       width: 100,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -100,31 +107,44 @@ class BuildaddOder extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      child: Row(children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.add,
-                              color: Colors.black,
-                            )),
-                        Text(
-                          '01',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
-                        ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.remove,
-                              color: Colors.black,
-                            ))
-                      ]),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (numofitem > 1) {
+                                    numofitem--;
+                                  }
+                                });
+                              },
+                              icon: Icon(
+                                Icons.remove,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              numofitem.toString().padLeft(2, "0"),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    numofitem++;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.add,
+                                  color: Colors.black,
+                                ))
+                          ]),
                       height: 65,
-                      width: 140,
+                      width: 135,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -141,9 +161,9 @@ class BuildaddOder extends StatelessWidget {
                         ],
                       ),
                       height: 65,
-                      width: 140,
+                      width: 135,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -151,35 +171,44 @@ class BuildaddOder extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 GestureDetector(
-                  onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => OderDetails(product: product),
-                    ),
-                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            OderDetails(product: products.first),
+                      ),
+                    );
+                  },
                   child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.add_box_rounded,
-                              size: 40,
-                              color: Colors.white,
-                            )),
-                        SizedBox(height: 20),
-                        Text(
-                          'Add',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        )
-                      ],
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(right: 10, bottom: 10, top: 15),
+                      child: Column(
+                        children: [
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_box_rounded,
+                                size: 40,
+                                color: Colors.white,
+                              )),
+                          SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              'Add',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     height: 140,
-                    width: 75,
+                    width: 70,
                     decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(7),
-                      border: Border.all(color: Colors.black),
                     ),
                   ),
                 ),
@@ -188,9 +217,9 @@ class BuildaddOder extends StatelessWidget {
           ],
         ),
       ),
-      margin: EdgeInsets.only(top: size.height * 0.55),
-      height: MediaQuery.of(context).size.height * .35,
-      width: double.infinity,
+      margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.56),
+      height: MediaQuery.of(context).size.height * 0.35,
+      width: 400,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

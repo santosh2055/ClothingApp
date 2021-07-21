@@ -3,7 +3,6 @@ import 'package:clothing_store/Componets/categores.dart';
 import 'package:clothing_store/Componets/buildAppbar_home.dart';
 import 'package:clothing_store/Componets/producttile.dart';
 import 'package:clothing_store/Model/product.dart';
-import 'package:clothing_store/Screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomepageScreen extends StatefulWidget {
@@ -53,22 +52,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     children: [
                       Producttile(
                         product: products[0],
-                        onpress: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => ProductDetail(
-                                product: products[0],
-                              ),
-                            ),
-                          );
-                        },
-                        isliked: true,
                       ),
-
                       Producttile(
                         product: products[2],
-                        onpress: () {},
-                        isliked: false,
                       ),
                     ],
                   ),
@@ -78,13 +64,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     children: [
                       Producttile(
                         product: products[3],
-                        onpress: () {},
-                        isliked: false,
                       ),
                       Producttile(
-                        product: products[4],
-                        onpress: () {},
-                        isliked: false,
+                        product: products[5],
                       ),
                     ],
                   ),

@@ -4,10 +4,12 @@ import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_line/dotted_line.dart';
 
-class OderDetails extends StatefulWidget {
-  final Product product;
+import '../constant.dart';
 
-  OderDetails({required this.product});
+class OderDetails extends StatefulWidget {
+  final Product? product;
+
+  OderDetails({this.product});
   @override
   _OderDetailsState createState() => _OderDetailsState();
 }
@@ -59,11 +61,11 @@ class _OderDetailsState extends State<OderDetails> {
                         children: [
                           Text(
                             'Sub Total:',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesumarytextstyle,
                           ),
                           Text(
                             '\$300 US',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesummarystyle,
                           )
                         ],
                       ),
@@ -73,27 +75,29 @@ class _OderDetailsState extends State<OderDetails> {
                         children: [
                           Text(
                             'Shipping',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesumarytextstyle,
                           ),
                           Text(
                             '\$10 US',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesummarystyle,
                           )
                         ],
                       ),
                       SizedBox(height: 10),
-                      DottedLine(),
+                      DottedLine(
+                        dashColor: Colors.black54,
+                      ),
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             'Total',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesumarytextstyle,
                           ),
                           Text(
                             '\$310 US',
-                            style: TextStyle(fontSize: 20),
+                            style: kpricesummarystyle,
                           )
                         ],
                       ),
@@ -106,9 +110,10 @@ class _OderDetailsState extends State<OderDetails> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SizedBox(
-                    height: 50,
+                    height: 60,
                     width: double.infinity,
                     child: ElevatedButton(
+                      style: kbuttonstyle,
                       onPressed: () {},
                       child: Text('Proceed To CheckOut'),
                     ),
