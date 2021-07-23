@@ -23,10 +23,10 @@ class _BuildaddOderState extends State<BuildaddOder> {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
+        padding: EdgeInsets.only(top: 15, left: 18, right: 18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,10 +72,10 @@ class _BuildaddOderState extends State<BuildaddOder> {
                           )
                         ],
                       ),
-                      height: 65,
-                      width: 100,
+                      height: 60,
+                      width: 90,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -85,8 +85,9 @@ class _BuildaddOderState extends State<BuildaddOder> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text('Color'),
+                          SizedBox(height: 5),
                           Container(
-                            height: 20,
+                            height: 10,
                             width: 50,
                             decoration: BoxDecoration(
                                 color: Colors.blueGrey,
@@ -94,10 +95,10 @@ class _BuildaddOderState extends State<BuildaddOder> {
                           ),
                         ],
                       ),
-                      height: 65,
-                      width: 100,
+                      height: 60,
+                      width: 90,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.black),
                       ),
                     ),
@@ -141,8 +142,8 @@ class _BuildaddOderState extends State<BuildaddOder> {
                                   color: Colors.black,
                                 ))
                           ]),
-                      height: 65,
-                      width: 135,
+                      height: 60,
+                      width: 130,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
@@ -160,8 +161,8 @@ class _BuildaddOderState extends State<BuildaddOder> {
                           ),
                         ],
                       ),
-                      height: 65,
-                      width: 135,
+                      height: 60,
+                      width: 130,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black),
@@ -204,10 +205,10 @@ class _BuildaddOderState extends State<BuildaddOder> {
                         ],
                       ),
                     ),
-                    height: 140,
-                    width: 70,
+                    height: 130,
+                    width: 75,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Color(0xE213188B),
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
@@ -221,10 +222,10 @@ class _BuildaddOderState extends State<BuildaddOder> {
       height: MediaQuery.of(context).size.height * 0.35,
       width: 400,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xffEAEAEA),
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
       ),
     );

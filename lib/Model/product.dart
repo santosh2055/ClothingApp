@@ -37,7 +37,7 @@ List<Product> products = [
       size: 'Extra large(XL)'),
   Product(
       id: 3,
-      title: 'Ladies Bag',
+      title: 'Men tshirt',
       image: 'Images/menshirt.jpg',
       newprice: 90,
       oldprice: 110,
@@ -70,7 +70,7 @@ List<Product> products = [
       newprice: 40,
       oldprice: 65,
       size: ' Large(L)'),
-      Product(
+  Product(
       id: 8,
       title: ' New Brand Tshirt',
       image: 'Images/3.jpg',

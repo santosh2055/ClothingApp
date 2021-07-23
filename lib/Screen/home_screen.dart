@@ -2,6 +2,7 @@ import 'package:clothing_store/Componets/bulidBottomAppbar.dart';
 import 'package:clothing_store/Componets/categores.dart';
 import 'package:clothing_store/Componets/buildAppbar_home.dart';
 import 'package:clothing_store/Componets/producttile.dart';
+import 'package:clothing_store/Componets/producttile1.dart';
 import 'package:clothing_store/Model/product.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffEAEAEA),
         appBar: buildAppbar(),
         body: Container(
           height: double.infinity,
@@ -28,8 +30,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   Container(
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
                       textAlign: TextAlign.center,
@@ -50,23 +52,27 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Producttile(
-                        product: products[0],
+                      Column(
+                        children: [
+                          Producttile(
+                            product: products[5],
+                          ),
+                          SizedBox(height: 12),
+                          Producttile1(
+                            product: products[2],
+                          ),
+                        ],
                       ),
-                      Producttile(
-                        product: products[2],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Producttile(
-                        product: products[3],
-                      ),
-                      Producttile(
-                        product: products[5],
+                      Column(
+                        children: [
+                          Producttile1(
+                            product: products[0],
+                          ),
+                          SizedBox(height: 12),
+                          Producttile(
+                            product: products[4],
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -79,11 +85,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(5.0),
           child: FloatingActionButton(
+            backgroundColor: Color(0xE213188B),
             onPressed: () {},
             child: Icon(Icons.add),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        resizeToAvoidBottomInset: false,
       ),
     );
   }

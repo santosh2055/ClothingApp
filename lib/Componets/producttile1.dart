@@ -2,18 +2,18 @@ import 'package:clothing_store/Model/product.dart';
 import 'package:clothing_store/Screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
-class Producttile extends StatefulWidget {
+class Producttile1 extends StatefulWidget {
   final Product product;
 
-  Producttile({
+  Producttile1({
     required this.product,
   });
 
   @override
-  _ProducttileState createState() => _ProducttileState();
+  _Producttile1State createState() => _Producttile1State();
 }
 
-class _ProducttileState extends State<Producttile> {
+class _Producttile1State extends State<Producttile1> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,8 +25,8 @@ class _ProducttileState extends State<Producttile> {
         ),
       ),
       child: Column(
-        mainAxisAlignment:MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Stack(
             children: [
@@ -34,7 +34,7 @@ class _ProducttileState extends State<Producttile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                height: MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.25,
                 width: MediaQuery.of(context).size.width * 0.43,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),

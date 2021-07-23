@@ -19,6 +19,7 @@ class _OderDetailsState extends State<OderDetails> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffEAEAEA),
         appBar: AppBar(
           elevation: 0,
           title: Center(
@@ -26,7 +27,7 @@ class _OderDetailsState extends State<OderDetails> {
             'MY Cart(3)',
             style: TextStyle(fontSize: 20, color: Colors.black),
           )),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xffEAEAEA),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -60,16 +61,24 @@ class _OderDetailsState extends State<OderDetails> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Sub Total:',
+                            'SubTotal:',
                             style: kpricesumarytextstyle,
                           ),
-                          Text(
-                            '\$300 US',
-                            style: kpricesummarystyle,
+                          Row(
+                            children: [
+                              Text(
+                                '\$300 ',
+                                style: kpricesummarystyle,
+                              ),
+                              Text(
+                                'US',
+                                style: kpricesumarytextstyle,
+                              )
+                            ],
                           )
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -77,27 +86,43 @@ class _OderDetailsState extends State<OderDetails> {
                             'Shipping',
                             style: kpricesumarytextstyle,
                           ),
-                          Text(
-                            '\$10 US',
-                            style: kpricesummarystyle,
+                          Row(
+                            children: [
+                              Text(
+                                '\$10 ',
+                                style: kpricesummarystyle,
+                              ),
+                              Text(
+                                'US',
+                                style: kpricesumarytextstyle,
+                              )
+                            ],
                           )
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       DottedLine(
                         dashColor: Colors.black54,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Total',
+                            'Total:',
                             style: kpricesumarytextstyle,
                           ),
-                          Text(
-                            '\$310 US',
-                            style: kpricesummarystyle,
+                          Row(
+                            children: [
+                              Text(
+                                '\$310 ',
+                                style: kpricesummarystyle,
+                              ),
+                              Text(
+                                'US',
+                                style: kpricesumarytextstyle,
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -110,7 +135,7 @@ class _OderDetailsState extends State<OderDetails> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SizedBox(
-                    height: 60,
+                    height: 55,
                     width: double.infinity,
                     child: ElevatedButton(
                       style: kbuttonstyle,

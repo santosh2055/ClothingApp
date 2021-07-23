@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class CircleImage extends StatelessWidget {
@@ -18,12 +19,13 @@ class CircleImage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
-                radius:30,
+                radius:26,
                 backgroundImage: AssetImage(image),
               ),
             ),
           ),
-          Text(title)
+          SizedBox(height: 5),
+          Text(title,style: TextStyle(color:Colors.black54)),
         ],
       ),
     );

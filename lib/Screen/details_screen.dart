@@ -14,7 +14,7 @@ class ProductDetail extends StatefulWidget {
 
 class _ProductDetailState extends State<ProductDetail> {
   int index = 0;
-  List<String> img = [products[0].image, products[6].image, products[7].image];
+  List<String> img = [products[5].image, products[6].image, products[7].image];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -50,16 +50,10 @@ class _ProductDetailState extends State<ProductDetail> {
                   Container(
                     height: 400,
                     width: 400,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                      ),
-                      child: Image.asset(
-                        // widget.product.image,
-                        img[index],
-                        fit: BoxFit.cover,
-                      ),
+                    child: Image.asset(
+                      // widget.product.image,
+                      img[index],
+                      fit: BoxFit.cover,
                     ),
                   ),
                   BuildaddOder(product: widget.product, size: size),
@@ -132,7 +126,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            ProductsmallContainer(image: products[0].image),
+                            ProductsmallContainer(image: products[5].image),
                             SizedBox(width: 4),
                             ProductsmallContainer(image: products[6].image),
                             SizedBox(width: 4),

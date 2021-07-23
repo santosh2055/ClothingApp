@@ -70,7 +70,7 @@ class _OderCardState extends State<OderCard> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.clear, size: 25),
+              icon: Icon(Icons.clear, size: 25,),
             ),
             Row(
               children: [
@@ -98,7 +98,7 @@ class _OderCardState extends State<OderCard> {
                     },
                     icon: Icon(
                       Icons.add_circle,
-                      color: Colors.blue,
+                      color:  Color(0xE213188B),
                       size: 25,
                     ),
                     ),

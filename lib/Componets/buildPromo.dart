@@ -10,7 +10,7 @@ Row buildpromoCode() {
         height: 60,
         width: 335,
         decoration: BoxDecoration(
-          color: Colors.black12,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
