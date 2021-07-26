@@ -52,7 +52,7 @@ class _OderCardState extends State<OderCard> {
               children: [
                 Text(
                   '\$${widget.product.newprice}',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(width: 5),
                 Text(
@@ -98,7 +98,7 @@ class _OderCardState extends State<OderCard> {
                     },
                     icon: Icon(
                       Icons.add_circle,
-                      color:  Color(0xE213188B),
+                      color:  Color(0xd2212fc4),
                       size: 25,
                     ),
                     ),

@@ -9,7 +9,7 @@ BottomAppBar buildbottomAppbar() {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.home,color: Color(0xE213188B),)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.home,color: Color(0xd2212fc4),)),
             IconButton(onPressed: () {}, icon: Icon(Icons.receipt_sharp,color: Colors.black45,)),
             IconButton(onPressed: () {}, icon: Icon(Icons.circle_rounded,color: Colors.black45)),
             IconButton(onPressed: () {}, icon: Icon(Icons.person,color: Colors.black45)),

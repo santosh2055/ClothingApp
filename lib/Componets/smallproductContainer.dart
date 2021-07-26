@@ -10,8 +10,8 @@ class ProductsmallContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),
-      height: 75,
-      width: 70,
+      height: 55,
+      width: 65,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Image.asset(

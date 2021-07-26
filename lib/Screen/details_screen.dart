@@ -114,26 +114,42 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   Positioned(
                     top: MediaQuery.of(context).size.height * .4,
-                    left: MediaQuery.of(context).size.height * 0.1,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white70),
-                      height: 75,
-                      width: 235,
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            ProductsmallContainer(image: products[5].image),
-                            SizedBox(width: 4),
-                            ProductsmallContainer(image: products[6].image),
-                            SizedBox(width: 4),
-                            ProductsmallContainer(image: products[7].image)
-                          ],
+                    left: MediaQuery.of(context).size.height * 0.12,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white70),
+                          height: 65,
+                          width: 220,
+                          alignment: Alignment.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                ProductsmallContainer(image: products[5].image),
+                                SizedBox(width: 4),
+                                ProductsmallContainer(image: products[6].image),
+                                SizedBox(width: 4),
+                                ProductsmallContainer(image: products[7].image)
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(height: 5),
+                        Container(
+                          margin: EdgeInsets.only(top: 8, left: 10),
+                          height: 5,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ],

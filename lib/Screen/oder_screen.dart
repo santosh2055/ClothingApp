@@ -71,8 +71,8 @@ class _OderDetailsState extends State<OderDetails> {
                                 style: kpricesummarystyle,
                               ),
                               Text(
-                                'US',
-                                style: kpricesumarytextstyle,
+                                'USD',
+                                style: kpricesumarytextstyle.copyWith(fontSize: 15),
                               )
                             ],
                           )
@@ -93,8 +93,8 @@ class _OderDetailsState extends State<OderDetails> {
                                 style: kpricesummarystyle,
                               ),
                               Text(
-                                'US',
-                                style: kpricesumarytextstyle,
+                                'USD',
+                                style: kpricesumarytextstyle.copyWith(fontSize: 15),
                               )
                             ],
                           )
@@ -119,8 +119,8 @@ class _OderDetailsState extends State<OderDetails> {
                                 style: kpricesummarystyle,
                               ),
                               Text(
-                                'US',
-                                style: kpricesumarytextstyle,
+                                'USD',
+                                style: kpricesumarytextstyle.copyWith(fontSize: 15),
                               )
                             ],
                           )

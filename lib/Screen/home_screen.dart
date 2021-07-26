@@ -85,7 +85,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(5.0),
           child: FloatingActionButton(
-            backgroundColor: Color(0xE213188B),
+            backgroundColor: Color(0xd2212fc4),
             onPressed: () {},
             child: Icon(Icons.add),
           ),

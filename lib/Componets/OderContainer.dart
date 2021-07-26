@@ -76,7 +76,7 @@ class _BuildaddOderState extends State<BuildaddOder> {
                       width: 90,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Colors.black26),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -99,7 +99,7 @@ class _BuildaddOderState extends State<BuildaddOder> {
                       width: 90,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Colors.black26),
                       ),
                     ),
                   ],
@@ -109,44 +109,45 @@ class _BuildaddOderState extends State<BuildaddOder> {
                   children: [
                     Container(
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              setState(() {
+                                if (numofitem > 1) {
+                                  numofitem--;
+                                }
+                              });
+                            },
+                            icon: Icon(
+                              Icons.remove,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Text(
+                            numofitem.toString().padLeft(2, "0"),
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          IconButton(
                               onPressed: () {
                                 setState(() {
-                                  if (numofitem > 1) {
-                                    numofitem--;
-                                  }
+                                  numofitem++;
                                 });
                               },
                               icon: Icon(
-                                Icons.remove,
+                                Icons.add,
                                 color: Colors.black,
-                              ),
-                            ),
-                            Text(
-                              numofitem.toString().padLeft(2, "0"),
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    numofitem++;
-                                  });
-                                },
-                                icon: Icon(
-                                  Icons.add,
-                                  color: Colors.black,
-                                ))
-                          ]),
+                              ))
+                        ],
+                      ),
                       height: 60,
                       width: 130,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Colors.black26),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -165,7 +166,7 @@ class _BuildaddOderState extends State<BuildaddOder> {
                       width: 130,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Colors.black26),
                       ),
                     ),
                   ],
@@ -208,7 +209,7 @@ class _BuildaddOderState extends State<BuildaddOder> {
                     height: 130,
                     width: 75,
                     decoration: BoxDecoration(
-                      color: Color(0xE213188B),
+                      color: Color(0xd2212fc4),
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
